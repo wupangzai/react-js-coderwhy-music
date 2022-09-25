@@ -12,7 +12,7 @@ import { HeaerWrapper, HeaderLeft, HeaderRight } from "./style";
 export default memo(function AppHeader() {
   const renderHeaderLink = (item, index) => {
     return index < 3 ? (
-      <NavLink to={item.link} exact>
+      <NavLink to={item.link}>
         {item.title}
         <i className="sprite_01 icon"></i>
       </NavLink>
@@ -25,7 +25,7 @@ export default memo(function AppHeader() {
     <HeaerWrapper>
       <div className="content wrap-v1">
         <HeaderLeft>
-          <a href="#/" className="sprite_01 logo">
+          <a href="#/discover" className="sprite_01 logo">
             网易云音乐
           </a>
           <div className="select-list">
