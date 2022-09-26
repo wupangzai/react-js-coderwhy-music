@@ -1,9 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { renderRoutes } from "react-router-config";
+
 
 import Menu from "./components/menu";
 
 export default memo(function Discover(props) {
+
   return (
     <div>
       <Menu />
