@@ -7,7 +7,8 @@ function Recommend(props) {
   const dispatch = useDispatch();
   const { topBanners } = useSelector(
     state => ({
-      topBanners: state.recommend.topBanners,
+      // topBanners: state.get("recommend").get("topBanners"),
+      topBanners: state.getIn(["recommend", "topBanners"]),
     }),
     shallowEqual
   );
