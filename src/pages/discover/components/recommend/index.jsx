@@ -4,7 +4,7 @@ import TopBanners from "./components/top-banners";
 function Recommend(props) {
   return (
     <div>
-      <TopBanners></TopBanners>
+      <TopBanners />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Footer = styled.div`
-  position: sticky;
-  bottom: 0;
+  /* position: sticky;
+  bottom: 0; */
   background-color: #f2f2f2;
   height: 172px;
   color: #666;
