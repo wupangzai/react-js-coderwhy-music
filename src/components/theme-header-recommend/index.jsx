@@ -1,8 +1,8 @@
 import React, { memo } from "react";
-
+import PropTypes from "prop-types";
 import { HeaderWrapper } from "./style";
 
-export default memo(function ThemeHeaderRecommend(props) {
+const ThemeHeaderRecommend = memo(function (props) {
   const { title, keywords } = props;
 
   return (
@@ -24,3 +24,14 @@ export default memo(function ThemeHeaderRecommend(props) {
     </HeaderWrapper>
   );
 });
+
+ThemeHeaderRecommend.prototypes = {
+  title: PropTypes.string.isRequired,
+  keywords: PropTypes.array,
+};
+
+ThemeHeaderRecommend.defaultProps = {
+  keywords: [],
+};
+
+export default ThemeHeaderRecommend;

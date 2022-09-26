@@ -35,13 +35,13 @@ export const HeaderWrapper = styled.div`
           }
         }
 
-        &:last-child {
+        /* &:last-child {
           ::after {
             content: "|";
             color: #ccc;
             padding-left: 10px;
           }
-        }
+        } */
       }
     }
   }
