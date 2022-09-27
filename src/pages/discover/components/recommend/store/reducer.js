@@ -11,7 +11,7 @@ function reducer(state = defaultState, action) {
   switch (action.type) {
     case actionType.CHANGE_TOP_BANNERS:
       return state.set("topBanners", action.topBanners);
-    case action.type:
+    case actionType.CHANGE_HOT_RECOMMENDS:
       return state.set("hotRecommends", action.hotRecommends);
     case actionType.CHANGE_SETTLE_SINGERS:
       return state.set("settleSingers", action.settleSingers);

@@ -26,10 +26,9 @@ export default memo(function HotRecommend() {
         title="热门推荐"
       />
       <div className="recommend-list">
-        {hotRecommends &&
-          hotRecommends.map((item, index) => (
-            <SongsCover item={item} key={item.id} />
-          ))}
+        {hotRecommends?.map((item, index) => (
+          <SongsCover item={item} key={item.id} />
+        ))}
       </div>
     </HotRecommendWrapper>
   );

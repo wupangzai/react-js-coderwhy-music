@@ -7,7 +7,7 @@ const ThemeSubHeaderRecommend = memo(function (props) {
     <SubHeaderWrapper>
       <div className="content">
         <div className="title">{props.title}</div>
-        <div className="right">{props.right}</div>
+        <div className="right">{props.right && props.right + " >"}</div>
       </div>
     </SubHeaderWrapper>
   );
