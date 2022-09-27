@@ -11,6 +11,8 @@ import TopBanners from "./components/top-banners";
 import HotRecommends from "./components/hot-recommends";
 import NewAlbum from "./components/new-album";
 import RecommendRanking from "./components/recommend-ranking";
+import UserLogin from "./components/user-login";
+import SettleSingers from "./components/settle-singers";
 
 function Recommend(props) {
   return (
@@ -22,7 +24,10 @@ function Recommend(props) {
           <NewAlbum></NewAlbum>
           <RecommendRanking></RecommendRanking>
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <UserLogin></UserLogin>
+          <SettleSingers></SettleSingers>
+        </RecommendRight>
       </Content>
     </RecommendWrapper>
   );

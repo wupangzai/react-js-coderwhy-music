@@ -15,3 +15,11 @@ export function getHotRecommends() {
     method: "GET",
   });
 }
+
+//获取推荐页入驻歌手
+export function getSettleSingers() {
+  return request({
+    url: "/top/artists?limit=5",
+    method: "GET",
+  });
+}

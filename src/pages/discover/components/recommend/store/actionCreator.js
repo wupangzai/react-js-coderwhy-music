@@ -1,5 +1,9 @@
 import * as actionType from "./constants";
-import { getTopBanners, getHotRecommends } from "@/services/discover/recommend";
+import {
+  getTopBanners,
+  getHotRecommends,
+  getSettleSingers,
+} from "@/services/discover/recommend";
 
 //修改store的action
 
@@ -13,6 +17,12 @@ const changeTopBannerAction = (res) => ({
 const changeHotRecommendsAction = (res) => ({
   type: actionType.CHANGE_HOT_RECOMMENDS,
   hotRecommends: res.result,
+});
+
+//推荐页入驻歌手
+const changeSettleSingersAction = (res) => ({
+  type: actionType.CHANGE_SETTLE_SINGERS,
+  settleSingers: res.artists,
 });
 
 //异步actions
@@ -30,8 +40,17 @@ export const getTopBannerAction = () => {
 export const getHotRecommendsAction = () => {
   return (dispatch) => {
     getHotRecommends().then((res) => {
-      console.log(res);
       dispatch(changeHotRecommendsAction(res));
+    });
+  };
+};
+
+//获取推荐页入驻歌手
+export const getSettleSingersAction = () => {
+  return (dispatch) => {
+    getSettleSingers().then((res) => {
+      console.log(res);
+      dispatch(changeSettleSingersAction(res));
     });
   };
 };
