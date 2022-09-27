@@ -3,6 +3,7 @@ import {
   getTopBanners,
   getHotRecommends,
   getSettleSingers,
+  getNewAlbum,
 } from "@/services/discover/recommend";
 
 //修改store的action
@@ -23,6 +24,12 @@ const changeHotRecommendsAction = (res) => ({
 const changeSettleSingersAction = (res) => ({
   type: actionType.CHANGE_SETTLE_SINGERS,
   settleSingers: res.artists,
+});
+
+//推荐页新碟上架
+const changeNewAlbumAction = (res) => ({
+  type: actionType.CHANGE_NEW_ALBUMS,
+  newAlbums: res.monthData,
 });
 
 //异步actions
@@ -49,8 +56,17 @@ export const getHotRecommendsAction = () => {
 export const getSettleSingersAction = () => {
   return (dispatch) => {
     getSettleSingers().then((res) => {
-      console.log(res);
       dispatch(changeSettleSingersAction(res));
+    });
+  };
+};
+
+//获取新碟上架数据
+export const getNewAlubmAction = (limit) => {
+  return (dispatch) => {
+    getNewAlbum(limit).then((res) => {
+      console.log(res);
+      dispatch(changeNewAlbumAction(res));
     });
   };
 };

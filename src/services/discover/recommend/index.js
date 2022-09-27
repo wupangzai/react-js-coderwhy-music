@@ -23,3 +23,13 @@ export function getSettleSingers() {
     method: "GET",
   });
 }
+
+//获取新碟上架数据
+export function getNewAlbum(limit) {
+  return request({
+    url: "/top/album?offset=0&year=2019&month=6",
+    params: {
+      limit,
+    },
+  });
+}
