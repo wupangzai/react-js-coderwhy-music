@@ -4,6 +4,8 @@ import {
   getHotRecommends,
   getSettleSingers,
   getNewAlbum,
+  getDjTopList,
+  getTopList,
 } from "@/services/discover/recommend";
 
 //修改store的action
@@ -32,7 +34,29 @@ const changeNewAlbumAction = (res) => ({
   newAlbums: res.monthData,
 });
 
-//异步actions
+//修改推荐热门主播数据action
+const changeDjTopListAction = (res) => ({
+  type: actionType.CHANGE_DJ_TOP_LIST,
+  djTopList: res.data.list,
+});
+
+//修改推荐排行榜单数据
+const changeUpRankingAction = (res) => ({
+  type: actionType.CHANGE_UP_RANKING,
+  upRanking: res.playlist,
+});
+
+const changeNewRankingAction = (res) => ({
+  type: actionType.CHANGE_NEW_RANKING,
+  newRanking: res.playlist,
+});
+
+const changeOriginRankingAction = (res) => ({
+  type: actionType.CHANGE_ORIGIN_RANKING,
+  originRanking: res.playlist,
+});
+
+//异步actions-----------------------------------------------------------
 
 //获取轮播图
 export const getTopBannerAction = () => {
@@ -65,8 +89,36 @@ export const getSettleSingersAction = () => {
 export const getNewAlubmAction = (limit) => {
   return (dispatch) => {
     getNewAlbum(limit).then((res) => {
-      console.log(res);
       dispatch(changeNewAlbumAction(res));
     });
+  };
+};
+
+//获取推荐热门主播数据action
+export const getDjTopListAction = (limit) => {
+  return async (dispatch) => {
+    const res = await getDjTopList(limit);
+    dispatch(changeDjTopListAction(res));
+  };
+};
+
+//获取推荐榜单排行
+export const getTopListAction = (id) => {
+  return async (dispatch) => {
+    const res = await getTopList(id);
+    console.log(res);
+    switch (id) {
+      case 19723756:
+        dispatch(changeUpRankingAction(res));
+        break;
+      case 3779629:
+        dispatch(changeNewRankingAction(res));
+        break;
+      case 2884035:
+        dispatch(changeOriginRankingAction(res));
+        break;
+      default:
+        break;
+    }
   };
 };

@@ -33,3 +33,24 @@ export function getNewAlbum(limit) {
     },
   });
 }
+
+//获取热门主播数据
+export function getDjTopList(limit) {
+  return request({
+    url: "/dj/toplist/popular",
+    params: {
+      limit,
+    },
+  });
+}
+
+//获取推荐榜单排行
+
+export function getTopList(id) {
+  return request({
+    url: "playlist/detail",
+    params: {
+      id,
+    },
+  });
+}

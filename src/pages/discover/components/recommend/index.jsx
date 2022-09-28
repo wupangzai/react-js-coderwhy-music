@@ -13,6 +13,7 @@ import NewAlbum from "./components/new-album";
 import RecommendRanking from "./components/recommend-ranking";
 import UserLogin from "./components/user-login";
 import SettleSingers from "./components/settle-singers";
+import PopularAnchor from "./components/popular-anchor";
 
 function Recommend(props) {
   return (
@@ -27,6 +28,7 @@ function Recommend(props) {
         <RecommendRight>
           <UserLogin></UserLogin>
           <SettleSingers></SettleSingers>
+          <PopularAnchor></PopularAnchor>
         </RecommendRight>
       </Content>
     </RecommendWrapper>
